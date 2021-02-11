@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: "audiowide";
+    src: url("/Public/Ressources/Fonts/Audiowide-Regular.ttf");
+    font-family: "roboto";
+    src: url("/Public/Ressources/Fonts/Roboto-Light.ttf");
+}
+
+body {
+    background-color: #f2f2f2;
+    font-family: "roboto";
+}
+
+html {
+    --gris: lightgrey;
+}
+
+h1 {
+    font-family: "audiowide";
+    font-size: 38px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+h2 {
+    margin: 25px 0 25px 0;
+    font-size: 27px;
+}
+
+.container__section2--flex--style {
+    width: 20%;
+    background-color: white;
+    border: 1px solid var(--gris);
+    padding-bottom: 20px;
+}
+
+.div__formulaire--style {
+    padding: 0 20px 0 20px;
+}
+
+input[type='email'],
+input[type='password'] {
+    height: 35px;
+}
+
+input[placeholder] {
+    padding-left: 10px;
+}
+
+input[type='checkbox'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+input[type='checkbox'] {
+    margin-right: 10px;
+    border-radius: 4px;
+    height: 15px;
+    width: 15px;
+    background: rgb(255, 0, 0);
+    border: 1px solid #ccc;
+}
+
+input[type='checkbox']:checked {
+    background: limegreen;
+    margin-right: 10px;
+    position: relative;
+}
+
+.section2__form__div3__p--style {
+    font-size: 13px;
+}
+
+.separation__form--flex {
+    width: 100%;
+    margin: 15px 0 15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.separation1__form__div--style {
+    width: 100%;
+    height: 2px;
+    border-bottom: solid 1px var(--gris);
+}
+
+.separation_ou {
+    margin: 0 15px 0 15px;
+    font-size: 14px;
+    color: grey;
+}
+
+.section2__form__div1--flex,
+.section2__form__div2--flex {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+}
+
+.section2__form__div3--flex,
+.section2__form__div4--flex {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.section2__form__div6--flex {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    border-radius: 30px;
+    font-family: "roboto";
+    font-weight: bold;
+}
+
+.connexion_button {
+    background-color: limegreen;
+    border: solid 1px limegreen;
+    color: white;
+}
+
+.pass_oublie {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.section2__form__div5--flex {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.google_button {
+    background-color: white;
+    border: solid 1px grey;
+}
+
+.apple_button {
+    margin-top: 15px;
+    background-color: black;
+    border: solid 1px black;
+    color: white;
+}
+
+.facebook_button {
+    margin-top: 15px;
+    background-color: #166fe2;
+    border: solid 1px #166fe2;
+    color: white;
+}
+
+.icone_google,
+.icone_apple {
+    margin: 0;
+    height: 15px;
+    margin-right: 15px;
+    transform: scale(1.8);
+}
+
+.icone_facebook {
+    margin: 0;
+    height: 15px;
+    margin-right: 15px;
+    transform: scale(2.5);
+}
+
+.container__div7--flex--style {
+    margin-top: 10px;
+    padding: 20px 0 20px 0;
+    width: 20%;
+    background-color: white;
+    border: 1px solid var(--gris);
+}
+
+.section2__form__div5--flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.div7__p--style {
+    text-align: center;
+}
+
+.div7__p__a--style {
+    padding-left: 10px;
+    color: #a200ff;
+    font-weight: bolder;
+    text-decoration: none;
+}
