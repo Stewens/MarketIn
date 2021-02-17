@@ -6,13 +6,13 @@
 @font-face {
     font-family: "audiowide";
     src: url("/Public/Ressources/Fonts/Audiowide-Regular.ttf");
-    font-family: "roboto";
-    src: url("/Public/Ressources/Fonts/Roboto-Light.ttf");
+    font-family: "arial";
+    src: url("/Public/Ressources/Fonts/arial.ttf");
 }
 
 body {
     background-color: #f2f2f2;
-    font-family: "roboto";
+    font-family: "arial";
 }
 
 html {
@@ -26,9 +26,34 @@ h1 {
     margin-top: 10px;
 }
 
-h2 {
-    margin: 25px 0 25px 0;
+h2[class='div__formulaire__h2'] {
+    margin-top: 25px;
     font-size: 27px;
+}
+
+.container__type_compte--flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container__type_compte__form--flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px 0 10px 0;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    border-radius: 30px;
+    font-family: "arial";
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
 }
 
 .container__section2--flex--style {
@@ -39,12 +64,14 @@ h2 {
 }
 
 .div__formulaire--style {
-    padding: 0 20px 0 20px;
+    padding: 0 25px 0 25px;
 }
 
 input[type='email'],
-input[type='password'] {
-    height: 35px;
+input[type='password'],
+input[type='text'],
+input[type='number'] {
+    height: 30px;
 }
 
 input[placeholder] {
@@ -55,25 +82,82 @@ input[type='checkbox'] {
     -webkit-appearance: none;
     -moz-appearance: none;
     -ms-appearance: none;
+    cursor: pointer;
 }
 
-input[type='checkbox'] {
-    margin-right: 10px;
-    border-radius: 4px;
-    height: 15px;
-    width: 15px;
-    background: rgb(255, 0, 0);
-    border: 1px solid #ccc;
-}
 
-input[type='checkbox']:checked {
-    background: limegreen;
-    margin-right: 10px;
+/* The switch - the box around the slider */
+
+.switch {
     position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+/* The slider */
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border: 1px solid gray;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 13px;
+    width: 13px;
+    left: -1px;
+    bottom: -1px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border: 1px solid gray;
+}
+
+input:checked+.slider {
+    background-color: limegreen;
+    border: solid 1px limegreen;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 100px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
 }
 
 .section2__form__div3__p--style {
     font-size: 13px;
+    margin-left: 10px;
 }
 
 .separation__form--flex {
@@ -101,7 +185,7 @@ input[type='checkbox']:checked {
 .section2__form__div2--flex {
     display: flex;
     flex-direction: column;
-    margin-top: 8px;
+    margin-top: 10px;
 }
 
 .section2__form__div3--flex,
@@ -117,15 +201,8 @@ input[type='checkbox']:checked {
     margin-top: 15px;
 }
 
-button {
-    padding: 10px;
-    width: 100%;
-    border-radius: 30px;
-    font-family: "roboto";
-    font-weight: bold;
-}
-
-.connexion_button {
+.connexion_button,
+.creation_button {
     background-color: limegreen;
     border: solid 1px limegreen;
     color: white;
@@ -133,8 +210,13 @@ button {
 
 .pass_oublie {
     text-decoration: none;
-    font-weight: bold;
     font-size: 13px;
+}
+
+.pass_oublie:hover {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .section2__form__div5--flex {
@@ -161,12 +243,23 @@ button {
     color: white;
 }
 
-.icone_google,
+.icone_google {
+    margin: 0;
+    height: 15px;
+    margin-right: 15px;
+    transform: scale(1.8);
+    position: relative;
+    top: 1px;
+    right: 55px;
+}
+
 .icone_apple {
     margin: 0;
     height: 15px;
     margin-right: 15px;
     transform: scale(1.8);
+    position: relative;
+    right: 60px;
 }
 
 .icone_facebook {
@@ -174,6 +267,8 @@ button {
     height: 15px;
     margin-right: 15px;
     transform: scale(2.5);
+    position: relative;
+    right: 49px;
 }
 
 .container__div7--flex--style {
@@ -198,6 +293,278 @@ button {
 .div7__p__a--style {
     padding-left: 10px;
     color: #a200ff;
-    font-weight: bolder;
     text-decoration: none;
+}
+
+.div7__p__a--style:hover {
+    padding-left: 10px;
+    color: #a200ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/*CSS Modal*/
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 14%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: "arial";
+}
+
+.container__modal {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+.modal__close {
+    color: gray;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.div__modal__h3 {
+    font-size: 28px;
+}
+
+.container__modal__body--flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__body__div1 {
+    margin-top: 10px;
+}
+
+.modal__body__div1__p1 {
+    font-size: 20px;
+}
+
+.form__radio--flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+
+.modal__body__div3 {
+    margin-top: 18px;
+}
+
+label[for='particulier'],
+label[for='professionnel'] {
+    font-size: 18px;
+}
+
+.modal__body__div4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.modal__body__div4__p2 {
+    font-size: 15px;
+}
+
+.modal__body__div4__a {
+    font-size: 15px;
+    padding-left: 10px;
+    color: #a200ff;
+    text-decoration: none;
+}
+
+.modal__body__div4__a:hover {
+    font-size: 15px;
+    padding-left: 10px;
+    color: #a200ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Sign_In_User + Sign_In_Pro */
+
+.div__formulaire__h3--style {
+    margin-bottom: 15px;
+}
+
+.container__signup__section2--flex--style {
+    width: 40%;
+    height: auto;
+    background-color: white;
+    border: 1px solid var(--gris);
+    padding-bottom: 20px;
+}
+
+.signup__infos--flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signup__form__user--flex,
+.signup__form__email--flex,
+.signup__form__password--flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.section2__form__input {
+    margin: 5px 0 15px 0;
+    width: 300px;
+    font-size: 16px;
+}
+
+.section2__form__input2 {
+    margin: 5px 0 15px 0;
+    width: 60px;
+    font-size: 16px;
+}
+
+.section2__form__input3 {
+    margin: 5px 0 15px 0;
+    width: 340px;
+    font-size: 16px;
+}
+
+.section2__form__input4 {
+    margin: 5px 0 15px 0;
+    width: 140px;
+    font-size: 16px;
+}
+
+.section2__form__div4__creation--flex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.creation_button {
+    width: 40%;
+}
+
+.section2__form__button--flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.google_button2 {
+    background-color: white;
+    border: solid 1px grey;
+    width: 90%;
+}
+
+.apple_button2 {
+    margin-top: 15px;
+    width: 90%;
+    background-color: black;
+    border: solid 1px black;
+    color: white;
+}
+
+.facebook_button2 {
+    margin-top: 15px;
+    width: 90%;
+    background-color: #166fe2;
+    border: solid 1px #166fe2;
+    color: white;
+}
+
+.signup__se_conecter--style {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+select {
+    height: 34px;
+}
+
+option {
+    text-align: center;
+}
+
+.div__responsable--flex--style {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container__civilite--flex {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.container__civilite__p--style {
+    margin-top: 20px;
+}
+
+.div__responsable__sexe {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 15px 0 0 55px;
+    width: 35%;
 }

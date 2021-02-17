@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./Public/Ressources/CSS/style.css">
+    <script src="./Public/Ressources/JS/modal.js"></script>
     <title>Market'In</title>
 </head>
 
@@ -17,12 +18,32 @@
         <section class='container__section2--flex--style'>
             <h1>Market'In</h1>
 
+
             <div class="div__formulaire--style">
-                <h2>Connexion</h2>
+                <h2 class="div__formulaire__h2">Connexion</h2>
+
+                <div class='separation__form--flex'>
+                    <div class='separation1__form__div--style'></div>
+                </div>
+
+
+                <div class="container__type_compte--flex">
+                    <form action="" method="POST" class='container__type_compte__form--flex'>
+                        <div class="">
+                            <input type="radio" name="login_type" value="particulier">
+                            <label for="particulier">Particulier</label>
+                        </div>
+
+                        <div class="">
+                            <input type="radio" name="login_type" value="professionnel">
+                            <label for="professionnel">Professionnel</label>
+                        </div>
+                    </form>
+                </div>
 
                 <form action="" method="POST" class='form__section2--flex'>
                     <div class='section2__form__div1--flex'>
-                        <input type="email" placeholder="Email" id='mail'>
+                        <input type="email" placeholder="Email" id='email'>
                     </div>
 
                     <div class='section2__form__div2--flex'>
@@ -30,7 +51,11 @@
                     </div>
 
                     <div class='section2__form__div3--flex'>
-                        <input type="checkbox" checked>
+                        <label class="switch">
+                            <input type="checkbox" checked> 
+                            <span class="slider round"></span>
+                        </label>
+
                         <p class="section2__form__div3__p--style">Rester connecté sur cet appareil</p>
                     </div>
 
@@ -58,9 +83,52 @@
         </section>
 
         <div class="container__div7--flex--style">
-            <p class="div7__p--style">Vous n'avez pas de compte ?<a href="" class="div7__p__a--style">Inscrivez-vous</a></p>
+            <p class="div7__p--style">Vous n'avez pas de compte ?<a href="#modal" onclick="showModal()" class="div7__p__a--style">Inscrivez-vous</a></p>
         </div>
     </div>
+
+    <!-- modal -->
+
+    <div id="modal">
+        <div class="container__modal">
+            <div class="modal__header">
+                <span class="modal__close" onclick="closeModal()">&times;</span>
+
+                <h3 class="div__modal__h3">Bienvenue !</h3>
+            </div>
+
+            <div class='separation__form--flex'>
+                <div class='separation1__form__div--style'></div>
+            </div>
+
+
+            <div class="container__modal__body--flex">
+                <div class="modal__body__div1">
+                    <p class="modal__body__div1__p1">Créer un compte en tant que...</p>
+                </div>
+
+                <form class="form__radio--flex">
+                    <div class="modal__body__div2">
+                        <input type="radio" name="type_compte" value="particulier">
+                        <label for="particulier">Particulier</label>
+                    </div>
+
+                    <div class="modal__body__div3">
+                        <input type="radio" name="type_compte" value="professionnel">
+                        <label for="professionnel">Professionnel</label>
+                    </div>
+                </form>
+
+                <div class="modal__body__div4">
+                    <p class="modal__body__div4__p2">Vous avez déja un compte ?</p>
+
+                    <a href="index.html" class="modal__body__div4__a">Se connecter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
 
 </body>
