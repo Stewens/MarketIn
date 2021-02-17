@@ -7,3 +7,8 @@ function closeModal() {
     var modal = document.getElementById('modal');
     modal.style.display = "none";
 }
+
+function closeModalSucess() {
+    var modal = document.getElementById('modal_sucess');
+    modal.style.display = "none";
+}

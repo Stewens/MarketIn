@@ -216,6 +216,7 @@ input:checked+.slider:before {
 .pass_oublie:hover {
     text-decoration: none;
     font-size: 13px;
+    color: #a200ff;
     font-weight: bold;
 }
 
@@ -418,14 +419,14 @@ label[for='professionnel'] {
 }
 
 .modal__body__div4__a {
-    font-size: 15px;
+    font-size: 16px;
     padding-left: 10px;
     color: #a200ff;
     text-decoration: none;
 }
 
 .modal__body__div4__a:hover {
-    font-size: 15px;
+    font-size: 16px;
     padding-left: 10px;
     color: #a200ff;
     text-decoration: none;
@@ -567,4 +568,157 @@ option {
     justify-content: space-between;
     margin: 15px 0 0 55px;
     width: 35%;
+}
+
+
+/*CSS modal_sucess*/
+
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+#modal_sucess {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    padding-top: 14%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: "arial";
+}
+
+.container__modal_sucess {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 35%;
+    height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+}
+
+.modal_sucess__close {
+    color: gray;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.modal_sucess__close:hover,
+.modal_sucess__close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.div__modal_sucess__h3 {
+    font-size: 28px;
+}
+
+.container__modal__sucess_body--flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal__body_sucess__div1 {
+    margin-top: 10px;
+}
+
+.modal_sucess__body__div1__p1 {
+    font-size: 18px;
+}
+
+.modal_sucess__body__div1__p2,
+.modal_sucess__body__div1__p3 {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.modal_sucess__body__div2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.modal_sucess__body__div3__a {
+    font-size: 16px;
+    padding-left: 10px;
+    color: #a200ff;
+    text-decoration: none;
+}
+
+.modal_sucess__body__div3__a:hover {
+    font-size: 16px;
+    padding-left: 10px;
+    color: #a200ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* CSS reset password */
+
+.container__reset_password__section2--flex--style {
+    width: 30%;
+    height: auto;
+    background-color: white;
+    border: 1px solid var(--gris);
+    padding-bottom: 20px;
+}
+
+.form__reset_password--flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form__reset_password__div1--flex--style {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.form__reset_password__div2--flex--style {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 25px 0 10px 0;
+    justify-content: center;
+}
+
+.reset_password_button {
+    width: 40%;
+    background-color: limegreen;
+    border: solid 1px limegreen;
+    color: white;
 }
